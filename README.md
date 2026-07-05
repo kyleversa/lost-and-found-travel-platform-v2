@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lost & Found Travel Platform v2
 
-## Getting Started
+A polished product prototype for **Lost & Found**, a social travel journal with two connected collections:
 
-First, run the development server:
+- **Found** — places you have been: journal entries, trip recaps, and pinned memories
+- **Lost** — places you want to go: dream trips, itineraries, and inspiration
+
+The live app showcases **Finn Shepherd** (`@finnshepherd`), a fictional travel journal profile with five Found and five Lost travel dossiers.
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS 4
+- Free public APIs: Wikipedia, Open Library, OpenStreetMap, and optional enrichment keys
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/                 # Routes for landing, Found, Lost, and destination dossiers
+  components/          # Shared UI
+  content/             # Finn profile + destination content
+  lib/                 # Types, helpers, external API integrations
+public/images/         # Destination photography migrated from v1
+```
 
-## Learn More
+## Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+### Phase 1 — Foundation (current)
+- [x] Next.js scaffold with dual themes
+- [x] 5 Found + 5 Lost travel dossiers for Finn's profile
+- [x] Dual visual themes (sepia journal vs midnight neon)
+- [x] Dossier navigation, itinerary blocks, budget tracker, packing checklist, map pins
+- [x] Wikipedia + Open Library research feeds
+- [x] City lookup on add flow (photo, summary, books, places, watch list)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Phase 2 — Travel planner depth
+- [ ] Itinerary builder (day-by-day blocks)
+- [ ] Drag-and-drop dossier sections (Notion-like boards)
+- [ ] Save / pin / archive items inside a destination
+- [x] TMDB media library integration (optional API key)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 3 — External libraries
+- [x] OpenTripMap points of interest (optional API key, Wikipedia geosearch fallback)
+- [x] REST Countries metadata
+- [ ] Curated public itinerary snippets (where licensing allows)
 
-## Deploy on Vercel
+### Phase 4 — Product polish
+- [ ] User accounts and personal journals
+- [ ] Exportable trip dossier PDF
+- [ ] Deploy to Vercel at `lost-and-found.kyleversa.vercel.app`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Original project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The v1 course project remains archived at:
+https://github.com/kyleversa/lost-and-found-travel-platform
+
+## Environment variables (optional)
+
+Copy `.env.example` to `.env.local` and add keys for richer city lookups:
+
+```bash
+TMDB_API_KEY=           # Film and TV watch list
+OPENTRIPMAP_API_KEY=    # Pinned places and map pins (Wikipedia fallback without this)
+UNSPLASH_ACCESS_KEY=    # Best cover photos (recommended)
+PEXELS_API_KEY=         # Cover photo fallback if Unsplash is unavailable
+MONGODB_URI=            # Optional if we restore book/media CRUD
+```
+
+Without API keys, city lookup still works using Wikimedia Commons skyline search, Wikipedia, Open Library, and OpenStreetMap for nearby landmarks.

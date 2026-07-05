@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Lost and Found">
+  <rect width="32" height="32" rx="8" fill="#1f1a14"/>
+  <path d="M8 10h6.5c3.2 0 5.3 1.7 5.3 4.5 0 2.1-1.2 3.6-3.1 4.2l4.3 6.3h-3.6l-3.8-5.6H11v5.6H8V10zm3 7.2h3.1c1.7 0 2.7-.8 2.7-2.2S15.8 13 14.1 13H11v4.2z" fill="#f5efe3"/>
+  <path d="M20.5 10H24l5.5 14h-3.2l-1.1-3H19.8l-1.1 3h-3.2L20.5 10zm3.8 8.3 1.5-4.7 1.5 4.7h-3z" fill="#c084fc"/>
+</svg>
