@@ -139,11 +139,22 @@ export function AddDestinationForm({ mode }: AddDestinationFormProps) {
   return (
     <form className="add-form panel panel-rise" onSubmit={handleSubmit}>
       <div className="panel-header">
-        <p className="panel-eyebrow">New travel dossier</p>
-        <h2 className="panel-title">Add a destination</h2>
+        <p className="panel-eyebrow">Prototype builder</p>
+        <h2 className="panel-title">
+          {mode === "lost" ? "Create a draft Lost dossier" : "Create a draft Found dossier"}
+        </h2>
         <p className="panel-copy">
-          Start with a blank dossier or copy one from this collection. For new cities,
-          pull in a cover photo and city notes from public libraries.
+          {mode === "lost"
+            ? "Create a dream-trip dossier for a place you want to go."
+            : "Create a memory dossier for a place you have been."}
+        </p>
+        <p className="panel-copy">
+          Use the builder to turn a city into a draft travel dossier with city context,
+          imagery, reading inspiration, and map details when available.
+        </p>
+        <p className="builder-promo-note">
+          Drafts are saved locally in this browser and do not modify Finn&apos;s seeded demo
+          profile.
         </p>
       </div>
 
@@ -283,7 +294,7 @@ export function AddDestinationForm({ mode }: AddDestinationFormProps) {
       )}
 
       <button type="submit" className="primary-action">
-        Create travel dossier
+        Create draft dossier
       </button>
     </form>
   );

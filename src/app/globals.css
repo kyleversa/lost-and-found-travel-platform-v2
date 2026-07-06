@@ -1777,6 +1777,39 @@ body {
   color: #b43c3c;
 }
 
+.builder-promo {
+  margin-top: 1.75rem;
+}
+
+.builder-promo-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.builder-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.builder-promo-compact {
+  margin-top: 1rem;
+}
+
+.add-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 1.25rem 1.5rem 0;
+}
+
+.add-page-nav .back-link {
+  margin: 0;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1809,6 +1842,15 @@ body {
   }
 
   .landing-cta-secondary {
+    justify-content: center;
+  }
+
+  .builder-promo-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .builder-promo-actions .secondary-action {
     justify-content: center;
   }
 

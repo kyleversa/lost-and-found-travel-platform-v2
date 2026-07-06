@@ -1,6 +1,7 @@
 "use client";
 
 import { DestinationCard } from "@/components/DestinationCard";
+import { DossierBuilderPromo } from "@/components/DossierBuilderPromo";
 import { ProfileIntro } from "@/components/ProfileIntro";
 import { useProfile } from "@/contexts/ProfileContext";
 import { useFoundDestinations, useLostDestinations } from "@/hooks/useUserDestinations";
@@ -33,6 +34,7 @@ export function DestinationHub({ mode }: DestinationHubProps) {
           <p className="hub-section-copy">
             {mode === "found" ? profile.collectionCopy.foundHub : profile.collectionCopy.lostHub}
           </p>
+          <DossierBuilderPromo username={username} variant="compact" mode={mode} />
         </div>
         <div className="destination-grid destination-grid-bento">
           {destinations.map((destination, index) => (

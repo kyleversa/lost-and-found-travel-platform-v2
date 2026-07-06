@@ -165,9 +165,15 @@ Finn's content is **curated demo data**, not crowdsourced or user-generated at s
 
 ## In progress / prototype
 
-### Dossier builder (add flow)
+### Dossier builder
 
-Lost & Found includes an **experimental dossier builder** that explores how a user could create a new Lost or Found entry:
+The dossier builder is available from the **landing page**, **Finn's profile**, and each **collection hub** as a prototype flow. Visitors can create draft Lost or Found entries at `/u/finn/lost/add` and `/u/finn/found/add`.
+
+**Creation loop:** city idea → enrichment → draft dossier → view locally in the browser.
+
+Drafts are stored in **local browser storage** and do not modify Finn's seeded demo profile. New drafts appear in the relevant collection on that device only.
+
+**Intended flow:**
 
 1. Choose Lost or Found
 2. Enter a city and country
@@ -175,13 +181,7 @@ Lost & Found includes an **experimental dossier builder** that explores how a us
 4. Generate a draft travel dossier
 5. View the new dossier in the browser
 
-**Status:** Prototype only. Routes exist at `/u/finn/lost/add` and `/u/finn/found/add`, but this flow is **not linked from the homepage or collection UI** and should be treated as in-progress exploration — not a finished core public feature.
-
-Draft content relies on public APIs and **local browser storage**. New entries are not tied to a user account and do not sync across devices.
-
-### City enrichment API
-
-`/api/enrich-city` supports the builder prototype by fetching destination imagery, summaries, book suggestions, and optional media/places when third-party keys are configured.
+`/api/enrich-city` supports the builder by fetching destination imagery, summaries, book suggestions, and optional media/places when third-party keys are configured.
 
 ---
 
@@ -266,7 +266,7 @@ To set accurate expectations for reviewers:
 | **No user accounts** | Visitors explore Finn's demo profile; there is no sign-up or login |
 | **No production database** | Edits and custom entries persist in **browser localStorage** only |
 | **Seeded demo content** | Finn's 10 dossiers are curated demo data, not a live user base |
-| **Builder not in main UI** | Add/dossier builder routes exist but are not promoted in navigation |
+| **Builder scope** | Prototype flow — drafts are local to the browser and do not modify Finn's seeded dossiers |
 | **No social layer yet** | Sharing, comments, and follows are planned future features |
 | **Public API variance** | Open Library suggestions can occasionally include loosely related titles |
 | **Optional keys** | Richer photos and media require API keys not needed for the public demo |
@@ -281,7 +281,7 @@ Only **planned** work appears here. Everything in **Completed in V2.0 Preview** 
 
 - User accounts and authentication
 - Persistent database storage for profiles and dossiers
-- Promote and polish the dossier builder in the main UI
+- Polish dossier builder UX and enrichment quality
 - Social features — sharing, comments, profile discovery
 - Better Open Library filtering for more relevant book suggestions
 - Custom OG / social preview image

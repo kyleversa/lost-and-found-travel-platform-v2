@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DossierBuilderPromo } from "@/components/DossierBuilderPromo";
 import { getDemoUser } from "@/content/demo";
 import { collectionPath } from "@/lib/paths";
 import { notFound } from "next/navigation";
@@ -91,6 +92,8 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
               <span className="world-portal-cta">Explore Found collection</span>
             </Link>
           </div>
+
+          <DossierBuilderPromo username={username} />
 
           <Link href="/" className="inline-link profile-overview-home">
             Back to Lost &amp; Found

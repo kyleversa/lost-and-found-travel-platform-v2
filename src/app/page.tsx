@@ -1,3 +1,4 @@
+import { DossierBuilderPromo } from "@/components/DossierBuilderPromo";
 import { HowItWorks } from "@/components/HowItWorks";
 import { DEFAULT_DEMO_USERNAME, getDemoUser } from "@/content/demo";
 import { collectionPath, profilePath } from "@/lib/paths";
@@ -68,6 +69,8 @@ export default function HomePage() {
               <span className="world-portal-cta">Explore Found collection</span>
             </Link>
           </div>
+
+          <DossierBuilderPromo username={username} />
 
           <p className="landing-social-note">
             Shareable travel dossiers · social lists · comments (coming soon)
