@@ -9,7 +9,7 @@
 
 **Lost & Found V2** is a live, publicly deployed **product prototype** for a social travel journal — a place to organize where you have been, where you want to go, and the stories that connect those journeys.
 
-This is **not** a full multi-user SaaS product yet. There are no real user accounts, no production database, and no server-side persistence for personal content. What you are viewing is a polished, recruiter-facing deployment: a complete product experience built around a **seeded demo profile** so visitors can explore the app the way they might browse a real traveler's journal.
+The current version is intentionally scoped as a polished product prototype rather than a full multi-user SaaS platform. It uses seeded demo content instead of live user accounts or a production database, allowing visitors to explore the intended product experience immediately — the way they might browse a real traveler's journal through **Finn Shepherd's demo profile**.
 
 Lost & Found V2 is a rebuild and continuation of my original [Lost & Found travel website](https://github.com/kyleversa/lost-and-found-travel-platform). The first version established the core idea. V2 focuses on product experience — profile-based navigation, rich destination dossiers, dual visual themes, and a clearer emotional split between **memories** and **dream trips**.
 
@@ -267,7 +267,7 @@ To set accurate expectations for reviewers:
 | **No production database** | Edits and custom entries persist in **browser localStorage** only |
 | **Seeded demo content** | Finn's 10 dossiers are curated demo data, not a live user base |
 | **Builder not in main UI** | Add/dossier builder routes exist but are not promoted in navigation |
-| **No social layer yet** | Sharing, comments, and follows are conceptual — noted as coming soon on the landing page |
+| **No social layer yet** | Sharing, comments, and follows are planned future features |
 | **Public API variance** | Open Library suggestions can occasionally include loosely related titles |
 | **Optional keys** | Richer photos and media require API keys not needed for the public demo |
 
@@ -286,7 +286,7 @@ Only **planned** work appears here. Everything in **Completed in V2.0 Preview** 
 - Better Open Library filtering for more relevant book suggestions
 - Custom OG / social preview image
 - Exportable trip dossier PDF
-- Custom domain
+- Dedicated branded domain (custom purchased domain)
 - Portfolio case study page for the project
 
 **Explored later:**
