@@ -1,18 +1,35 @@
-# Lost & Found Travel Platform v2
+# Lost & Found
 
-A polished product prototype for **Lost & Found**, a social travel journal with two connected collections:
+A social travel journal prototype with two connected collections:
 
 - **Found** — places you have been: journal entries, trip recaps, and pinned memories
 - **Lost** — places you want to go: dream trips, itineraries, and inspiration
 
-The live app showcases **Finn Shepherd** (`@finnshepherd`), a fictional travel journal profile with five Found and five Lost travel dossiers.
+The live V2 preview showcases **Finn Shepherd** (`@finnshepherd`), a seeded demo profile with five Found and five Lost travel dossiers.
+
+**Live preview:** https://lostandfound-travel.vercel.app
+
+**Repository:** https://github.com/kyleversa/lost-and-found-travel-platform-v2
+
+## Explore the demo
+
+Start at the landing page, then follow Finn’s profile:
+
+- `/` — landing page
+- `/u/finn` — profile hub
+- `/u/finn/lost` — dream trips (Lost collection)
+- `/u/finn/found` — travel memories (Found collection)
+- `/u/finn/lost/tokyo` and `/u/finn/found/paris` — example dossiers
+
+Legacy routes such as `/lost` and `/found` redirect to Finn’s profile collections.
 
 ## Stack
 
 - Next.js 16 (App Router)
 - React 19 + TypeScript
 - Tailwind CSS 4
-- Free public APIs: Wikipedia, Open Library, OpenStreetMap, and optional enrichment keys
+- Leaflet + OpenStreetMap
+- Free public APIs: Wikipedia, Open Library, and optional enrichment keys
 
 ## Getting started
 
@@ -23,20 +40,27 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+```bash
+npm run lint
+npm run build
+```
+
 ## Project structure
 
 ```
 src/
-  app/                 # Routes for landing, Found, Lost, and destination dossiers
+  app/                 # Routes for landing, profile, collections, and dossiers
   components/          # Shared UI
-  content/             # Finn profile + destination content
+  content/demo/        # Finn profile + destination content
   lib/                 # Types, helpers, external API integrations
-public/images/         # Destination photography migrated from v1
+public/images/         # Destination photography
 ```
+
+See [PROJECT_STATUS.md](./PROJECT_STATUS.md) for pause/handoff notes and deferred work.
 
 ## Roadmap
 
-### Phase 1 — Foundation (current)
+### Phase 1 — Foundation
 - [x] Next.js scaffold with dual themes
 - [x] 5 Found + 5 Lost travel dossiers for Finn's profile
 - [x] Dual visual themes (sepia journal vs midnight neon)
@@ -58,16 +82,22 @@ public/images/         # Destination photography migrated from v1
 ### Phase 4 — Product polish
 - [ ] User accounts and personal journals
 - [ ] Exportable trip dossier PDF
-- [ ] Deploy to Vercel at `lost-and-found.kyleversa.vercel.app`
+- [x] Deploy V2 preview to Vercel at `lostandfound-travel.vercel.app`
 
 ## Original project
 
 The v1 course project remains archived at:
 https://github.com/kyleversa/lost-and-found-travel-platform
 
-## Environment variables (optional)
+## Environment variables
 
-Copy `.env.example` to `.env.local` and add keys for richer city lookups:
+**Production (Vercel):**
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://lostandfound-travel.vercel.app
+```
+
+**Optional local keys** — copy `.env.example` to `.env.local` for richer city lookups:
 
 ```bash
 TMDB_API_KEY=           # Film and TV watch list
