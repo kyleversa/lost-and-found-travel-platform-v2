@@ -184,7 +184,19 @@ body {
 }
 
 .landing-title-found {
-  color: #6f4f1d;
+  background: linear-gradient(
+    135deg,
+    #fff8eb 0%,
+    #e8c88f 18%,
+    #c99752 42%,
+    #8b5e2c 68%,
+    #d4a574 86%,
+    #f5e2c4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .landing-title-amp {
@@ -196,6 +208,7 @@ body {
   background: linear-gradient(135deg, #c084fc 0%, #38bdf8 55%, #ff4fd8 100%);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
