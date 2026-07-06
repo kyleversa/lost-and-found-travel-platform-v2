@@ -1651,11 +1651,21 @@ body {
   transform: translateY(-1px);
 }
 
-.mode-found .primary-action,
-.landing-page .primary-action {
+.mode-found .primary-action {
   background: #6f4f1d;
   color: #fff8ef;
   border-color: #6f4f1d;
+}
+
+.landing-page .primary-action {
+  background: #2a2833;
+  color: #faf8f5;
+  border-color: #2a2833;
+}
+
+.landing-page .primary-action:hover {
+  background: #38343f;
+  border-color: #38343f;
 }
 
 .mode-lost .primary-action {
